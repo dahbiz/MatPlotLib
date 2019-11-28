@@ -1,0 +1,52 @@
+####################################################################
+#            with a single variable uing matplotlib and using      #
+#           latex syntax for writting math equations.              #
+#             All credits goes to Zakaria Dahbi                    #
+#                     etriziko@gmail.com                           #
+####################################################################
+
+
+####################################################################
+#                 Calling needed modules                           #
+####################################################################
+#matplotlib inline
+from sympy import *
+from matplotlib import rc
+from pylab import figure, axes, plot, xlabel, ylabel, title, grid, savefig, show
+rc('text', usetex=True)
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+import seaborn
+####################################################################
+#                Define your function intervalle                   #
+####################################################################
+# 100 linearly spaced numbers
+x = np.linspace(0,20,2)
+####################################################################
+#      Define your function here(Example: x+1)                     #
+####################################################################
+def y(x):
+    z = x+1
+    return abs(z)
+####################################################################
+#               Plotting and labeling                              #
+####################################################################
+fig = plt.figure()
+plt.plot(x,y(x))
+#labeling the axis
+plt.text(15,9,r"$f(x)=x+1$",fontsize=14)
+plt.xlabel('$x$',fontsize=14)
+plt.ylabel('$f(x)$',fontsize=14)
+plt.title('Title $f(x)$')
+#to save the plot in pdf and png
+plt.savefig('fig.png')
+plt.savefig('fig.pdf')
+# show the plot
+plt.show()
+####################################################################
+#      You can play with this code to make it suits your need      #
+#                            :) :)                                 #
+#             All credits goes to Zakaria Dahbi                    #
+#                     etriziko@gmail.com                           #
+####################################################################
